@@ -8,7 +8,7 @@ public class Punto {
 			super();
 			this.x = x;
 			this.y = y;
-		}
+		} 
 		public float getX() {
 			return x;
 		}
