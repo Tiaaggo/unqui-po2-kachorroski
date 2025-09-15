@@ -16,12 +16,6 @@ class CounterTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		counter = new Counter();
-	}
-
-	@Test
-	void test() {
-		
-		Integer resultadoObtenido;
 		
 		ArrayList<Integer> listaDePrueba = new ArrayList<Integer>();
 		listaDePrueba.add(1);
@@ -32,8 +26,34 @@ class CounterTest {
 		listaDePrueba.add(6);
 		listaDePrueba.add(7);
 		counter.setNumeros(listaDePrueba);
+	}
+
+	@Test
+	void test() {
+		
+		Integer resultadoObtenido;
 		
 		resultadoObtenido = counter.totalDeNumerosPares();
+		
+		assertEquals(resultadoObtenido, 3);
+	}
+	
+	@Test
+	void test2() {
+		
+		Integer resultadoObtenido;
+		
+		resultadoObtenido = counter.totalDeNumerosImpares();
+		
+		assertEquals(resultadoObtenido, 4);
+	}
+	
+	@Test
+	void test3() {
+		
+		Integer resultadoObtenido;
+		
+		resultadoObtenido = counter.totalDeMultiplos(2);
 		
 		assertEquals(resultadoObtenido, 3);
 	}
