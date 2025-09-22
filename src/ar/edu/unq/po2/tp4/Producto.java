@@ -5,22 +5,26 @@ public class Producto {
 	private String nombre;
 	private Double precio;
 	private boolean precioCuidado;
+	private Integer descuento;
 	
 	public Producto(String nombre, Double precio) {
 		
-		this.nombre = nombre;
-		this.precio = precio;		
+		this(nombre, precio, false, 0);		
 	}
 
-	public Producto(String nombre, Double precio, Boolean precioCuidado) {
+	public Producto(String nombre, Double precio, Boolean precioCuidado, Integer descuento) {
 		
-		super();
 		this.nombre = nombre;
 		this.precio = precio;
 		this.precioCuidado = precioCuidado;
+		this.descuento = descuento;
 		
 	}
 	
+	public Integer getDescuento() {
+		return descuento;
+	}
+
 	public Boolean esPrecioCuidado() {
 		
 		return this.precioCuidado;

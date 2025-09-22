@@ -14,7 +14,7 @@ public class ProductoTest {
 	
 	@BeforeEach
 	public void setUp() {
-		arroz = new Producto("Arroz", 18.9d, true);
+		arroz = new Producto("Arroz", 18.9d, true, 0);
 		vino = new Producto("Vino", 55d);
 	}
 	

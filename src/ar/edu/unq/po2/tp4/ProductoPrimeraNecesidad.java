@@ -1,54 +1,23 @@
 package ar.edu.unq.po2.tp4;
 
-public class ProductoPrimeraNecesidad {
+public class ProductoPrimeraNecesidad extends Producto{
 	
-	private String nombre;
-	private Double precio;
-	private boolean precioCuidado;
-	
-	
-	public ProductoPrimeraNecesidad(String nombre, Double precio, Boolean precioCuidado) {
+	public ProductoPrimeraNecesidad(String nombre, Double precio, Boolean precioCuidado, Integer descuento) {
 		
-		super();
-		this.nombre = nombre;
-		this.precio = precio;
-		this.precioCuidado = precioCuidado;
+		super(nombre, precio, precioCuidado, descuento);
 		
-	}
-	
-	
-	public Double getPrecioCuidado() {
 		
-		return precio * 0.9;
-		
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public boolean esPrecioCuidado() {
-		return precioCuidado;
-	}
-
-	public void setPrecioCuidado(boolean precioCuidado) {
-		this.precioCuidado = precioCuidado;
 	}
 
 	public Double getPrecio() {
-		if(this.esPrecioCuidado() == false) {
+		if(this.esPrecioCuidado()) {
 			
-			return precio;
-			
+			return super.getPrecio() -(super.getPrecio() * super.getDescuento() / 100);
 		}
 		
 		else {
 			
-			return this.getPrecioCuidado();
+			return super.getPrecio();
 		}
 	}
 }
